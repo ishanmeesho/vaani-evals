@@ -151,9 +151,21 @@ def cmd_scores(args):
                                "timestamp": ts,
                                "sessionId": v["session_id"],
                                "tags": ["vaani", "eval", run],
-                               "metadata": {"run": run, "dt": agg["dt"],
-                                            "shopper_goal": v.get("shopper_goal"),
-                                            "judge": "claude-sonnet-5"},
+                               "metadata": {
+                                   "run": run,
+                                   "dt": agg["dt"],
+                                   "shopper_goal": v.get("shopper_goal"),
+                                   # A score is only interpretable next to the
+                                   # measurement that produced it. Both of these
+                                   # invalidate comparison when they change, so
+                                   # they travel with every trace rather than
+                                   # living only in the repo.
+                                   "judge_model": agg.get("judge_model", "claude-sonnet-5"),
+                                   "rubric_version": agg.get("rubric_version"),
+                                   "judge_fingerprint": agg.get("judge_fingerprint"),
+                                   "sampled": agg.get("sampled"),
+                                   "judged": agg.get("judged"),
+                               },
                                "input": v.get("shopper_goal"),
                                "output": (v.get("worst_turn") or {}).get("quote")}})
         for dim, sc in (v.get("scores") or {}).items():
@@ -164,7 +176,11 @@ def cmd_scores(args):
                           "body": {"traceId": trace_id, "name": dim,
                                    "value": 1 if verdict == "pass" else 0,
                                    "dataType": "NUMERIC",
-                                   "comment": (sc.get("why") or "")[:900] or None}})
+                                   "comment": (sc.get("why") or "")[:900] or None,
+                                   "metadata": {
+                                       "evidence": (sc.get("evidence") or "")[:900] or None,
+                                       "rubric_version": agg.get("rubric_version"),
+                                   }}})
 
     if args.dry_run:
         traces = sum(1 for b in batch if b["type"] == "trace-create")

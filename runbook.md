@@ -160,8 +160,22 @@ is a different measurement.
 ## 6. Publish (5 min)
 
 ```bash
-./setup_langfuse.sh --with-scores --run=$(date +%F)   # optional, from the VPN
+./setup_langfuse.sh --with-scores --run=$(date +%F)
 ```
+
+**This step cannot be automated by the scheduled run.** The Langfuse host is
+internal-only and the scheduled session runs in a cloud sandbox with no route
+to it — DNS returns NXDOMAIN and the egress gateway answers 502 to CONNECT.
+So the daily pass updates the dashboard, Slack and the repo on its own, and
+the Langfuse push is a manual step from a VPN machine afterwards:
+
+```bash
+git pull && ./setup_langfuse.sh --with-scores --run=<the run date>
+```
+
+If you want it automatic, the place for it is a launchd/cron job on a machine
+that is always on the VPN, pulling the repo and running that one line. Nothing
+in the harness needs to change for that.
 
 Then post `reports/<run>/slack.txt` to Slack and republish the dashboard
 artifact with the new `history.jsonl` row. Keep the artifact URL stable — it is
