@@ -3,9 +3,13 @@
 # Load the Vaani eval prompts into Langfuse. Run this ONCE from a machine on
 # the Meesho VPN.
 #
-#   ./setup_langfuse.sh                 # verify, then push the 28 prompts
-#   ./setup_langfuse.sh --with-scores   # also push a run's traces and scores
-#   ./setup_langfuse.sh --dry-run       # print what would be sent, send nothing
+#   ./setup_langfuse.sh                 verify, then push the 28 prompts
+#   ./setup_langfuse.sh --with-scores   the same, PLUS a run's traces and scores
+#   ./setup_langfuse.sh --dry-run       print what would be sent, send nothing
+#
+# --with-scores is a superset: it pushes the prompts too, so run one or the
+# other, not both. Running both is harmless but creates a second version of
+# every prompt for no reason.
 #
 # Why this has to run from the VPN: amp-langfuse-web-admin.prd.meesho.int is
 # internal-only. Verified 2026-09-08 from a cloud sandbox — DNS returns
@@ -30,7 +34,21 @@ for arg in "$@"; do
     --dry-run) DRY="--dry-run" ;;
     --with-scores) SCORES=1 ;;
     --run=*) RUN="${arg#*=}" ;;
-    *) echo "unknown argument: $arg"; exit 2 ;;
+    \#*|"#")
+      # zsh does not treat # as a comment in an INTERACTIVE shell unless
+      # interactive_comments is set, so a line pasted with a trailing comment
+      # arrives here as arguments. bash strips it; zsh hands it over.
+      echo "Ignoring '$arg' and anything after it — that looks like a pasted"
+      echo "trailing comment. zsh does not strip # in an interactive shell."
+      break ;;
+    *)
+      echo "unknown argument: $arg"
+      echo
+      echo "Usage: ./setup_langfuse.sh [--dry-run] [--with-scores] [--run=YYYY-MM-DD]"
+      echo
+      echo "If you pasted a command with a trailing '# comment': zsh does not"
+      echo "treat # as a comment in an interactive shell. Drop the comment."
+      exit 2 ;;
   esac
 done
 
