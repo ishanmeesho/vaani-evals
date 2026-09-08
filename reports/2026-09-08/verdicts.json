@@ -1,0 +1,2762 @@
+{
+  "run": "2026-09-08",
+  "judge": "claude-sonnet-5 (agent-in-session)",
+  "verdicts": [
+    {
+      "session_id": "8da34846-9aec-4995-bd9f-0e4f92ce8a50",
+      "shopper_goal": "Fix a wishlist mistake, then drifts into singing songs at the assistant",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "117 turns, hair extensions named by both sides repeatedly, zero searches ever fired.",
+          "evidence": "SEARCH_KW=[] across 117 turns"
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Invents a 5-7 day delivery window with no delivery data in context.",
+          "evidence": "अक्सर 5 से 7 दिन में सामान पहुँच जाता है"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "The same binary hair-extension/facewash question re-asked ~20 times with no action between.",
+          "evidence": "आप किस वाले प्रोडक्ट के लिए गाना बोलना चाहती हैं—ऊपर वाला हेयर एक्सटेंशन या नीचे वाला फेसवॉश/क्रीम?"
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "fail",
+          "why": "Repeatedly promises to help match her tune. It cannot produce audio.",
+          "evidence": "मैं साथ में लय मिलाने में मदद कर दूँगी"
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "fail",
+          "why": "Fifteen consecutive song turns engaged warmly instead of one acknowledgement and a shopping move.",
+          "evidence": "वाह, आपका गाना बहुत अच्छा है!"
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "आप किस वाले प्रोडक्ट के लिए गाना बोलना चाहती हैं—ऊपर वाला हेयर एक्सटेंशन या नीचे वाला फेसवॉश/क्रीम?",
+        "why": "The same binary hair-extension/facewash question re-asked ~20 times with no action between."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "d6018401-135d-445b-9d49-7a7057ca6621",
+      "shopper_goal": "Find a saree that comes with a ready-stitched blouse under Rs.1000",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "Budget ₹1000 stated and confirmed, then dropped from the next four queries.",
+          "evidence": "cotton saree ready stitched blouse (no under 1000)"
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "18 queries oscillating between four phrasings of the same need, several byte-identical consecutively.",
+          "evidence": "ready made blouse saree under 1000 / ready made blouse saree under 1000"
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "ready made blouse saree under 1000 / ready made blouse saree under 1000",
+        "why": "18 queries oscillating between four phrasings of the same need, several byte-identical consecutively."
+      },
+      "novel_failure": {
+        "proposed_id": "AFFIRMATION_POLARITY",
+        "name": "Opens with हाँ and then negates, or affirms something it cannot know",
+        "asks": "Does the yes/no particle at the start of the reply agree with the content that follows, and with what Vaani actually knows?",
+        "why_not_covered": "FACTUALITY is closest but the facts here are correct — the defect is the affirmation particle contradicting them. Spoken aloud to a low-literacy shopper, 'हाँ' followed by 'नहीं है' reverses the answer she hears.",
+        "evidence": "हाँ, इस साड़ी के साथ ready to wear blouse नहीं है",
+        "severity": "major"
+      }
+    },
+    {
+      "session_id": "a0c7ffac-51d9-453f-9547-04dd4435c835",
+      "shopper_goal": "Small handbag under Rs.200, then girls' shoes, then a small almirah, then perfume",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "She named two colours with a widening 'aur'; only pink reached the query, and the reply claims both were applied.",
+          "evidence": "query=pink handbag under 200 vs said गुलाबी और भूरा"
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Conversational phrasing pushed into the retrieval string, plus a 7-token over-stuffed variant.",
+          "evidence": "small almirah door under 200 two door wooden look"
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "query=pink handbag under 200 vs said गुलाबी और भूरा",
+        "why": "She named two colours with a widening 'aur'; only pink reached the query, and the reply claims both were applied."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "48a9efc6-3fa5-4854-9415-9264a7084cd5",
+      "shopper_goal": "A cheap Rakshabandhan dress for a 14-15 year old, delivered by the 28th",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "Delivery-by-28th is the shopper's binding constraint and never enters the query or a filter.",
+          "evidence": "girls dress under 200 x6, no date dimension"
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Six byte-identical consecutive queries.",
+          "evidence": "girls dress under 200"
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "Sends her into Filters to set price, and to the Change button to test delivery herself.",
+          "evidence": "नीचे “Filters” में जाकर price under 200 चुनिए"
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "नीचे “Filters” में जाकर price under 200 चुनिए",
+        "why": "Sends her into Filters to set price, and to the Change button to test delivery herself."
+      },
+      "novel_failure": {
+        "proposed_id": "UNACTIONABLE_ASK",
+        "name": "Asks the shopper for information Vaani cannot act on",
+        "asks": "Does Vaani request a datum — pincode, photo, link, measurement — that it has no ability to apply to the search, the filters or the answer?",
+        "why_not_covered": "ACT_NOT_ASK counts the question; NO_MANUAL_DEFLECTION covers work handed back. Neither captures a question whose answer Vaani could not use even if she gave it, which wastes the turn and teaches her the assistant is not listening.",
+        "evidence": "आपका पिनकोड क्या है?",
+        "severity": "major"
+      }
+    },
+    {
+      "session_id": "cd603840-65a8-438c-b867-be72e13aba90",
+      "shopper_goal": "Understand what fabric this is, how much per metre, and get it in a blue shade",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "She asks for a different colour variant twice; zero searches in 33 turns.",
+          "evidence": "SEARCH_KW=[]"
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Quotes four different prices for the fabric across one session, and answers a garbled question with nonsense.",
+          "evidence": "549 -> 89 -> 103 -> 95; '10 दिन में भी कपड़े की मात्रा 5 मीटर ही रहेगी'"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "fail",
+          "why": "Says a neelam shade is available, then next turn says this is not neelam fabric.",
+          "evidence": "हाँ, ऐसे ही कपड़े में नीलम सी रंग/डिज़ाइन मिल सकती है"
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "549 -> 89 -> 103 -> 95; '10 दिन में भी कपड़े की मात्रा 5 मीटर ही रहेगी'",
+        "why": "Quotes four different prices for the fabric across one session, and answers a garbled question with nonsense."
+      },
+      "novel_failure": {
+        "proposed_id": "SELF_CONSISTENCY",
+        "name": "Contradicts a fact it stated earlier in the same conversation",
+        "asks": "Compare every fact Vaani states against every fact it stated earlier in this conversation. Do any two conflict without the screen having demonstrably changed?",
+        "why_not_covered": "FACTUALITY grades each claim against supplied context, so two claims that are each individually plausible both pass — yet 549, 89, 103 and 95 for one fabric cannot all be true. Needs a cross-turn check.",
+        "evidence": "दाम 549 रुपये है / इसका दाम 89 रुपये दिख रहा है / दाम 103 रुपये दिख रहा है / Buy at ₹95",
+        "severity": "blocker"
+      }
+    },
+    {
+      "session_id": "fff72879-1f45-4ac3-8913-5910169d470c",
+      "shopper_goal": "A Rs.90 Bluetooth earphone, in black",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Price bound corrupted to ₹2,00,000 for a phone.",
+          "evidence": "iphone mobile phone under 200000"
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Same invented 5-7 day delivery window as session 8da34846 — the hallucination is systematic, not a one-off.",
+          "evidence": "अक्सर earphone 5 से 7 दिन में पहुँच जाता है"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "Tells her four separate times to type into the search box, in a voice product.",
+          "evidence": "ऊपर सर्च वाले सफेद बॉक्स में “earphone 90” लिखकर नीचे सर्च बटन दबाइए"
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "ऊपर सर्च वाले सफेद बॉक्स में “earphone 90” लिखकर नीचे सर्च बटन दबाइए",
+        "why": "Tells her four separate times to type into the search box, in a voice product."
+      },
+      "novel_failure": {
+        "proposed_id": "FALSE_ACTION_CLAIM",
+        "name": "Says it did or is doing something it did not do",
+        "asks": "For every claim of action — मैं सर्च कर रही हूँ, दिखा देती हूँ, मैंने सर्च कर दिया है, ढूँढ रही हूँ — did the corresponding action actually fire on that turn?",
+        "why_not_covered": "SEARCH_TRIGGER catches the missing search; it does not catch the assertion that the search happened. Cheaply auto-detectable by pairing the claim lexicon against the turn's action_type, and directly corrosive of trust.",
+        "evidence": "मैंने सर्च कर दिया है — while simultaneously telling her to type the query herself",
+        "severity": "blocker"
+      }
+    },
+    {
+      "session_id": "64447079-1c70-4e69-8451-6273f78900d9",
+      "shopper_goal": "A floor-standing steel rack to hold utensils",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Six consecutive identical queries out of 17; the search never converges on the floor-standing rack she describes.",
+          "evidence": "stainless steel dish drainer under 300"
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Infers capacity and floor-standing form from a photo and states it as fact-shaped speculation.",
+          "evidence": "वही ज्यादा capacity वाला होगा"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "stainless steel dish drainer under 300",
+        "why": "Six consecutive identical queries out of 17; the search never converges on the floor-standing rack she describes."
+      },
+      "novel_failure": {
+        "proposed_id": "FRUSTRATION_UNHEEDED",
+        "name": "Repeated dissatisfaction does not change the approach",
+        "asks": "Has the shopper signalled two or more times that the results are wrong or that she is unhappy? If so, did Vaani change strategy — a different query shape, filters, a plainer question — or repeat the same move?",
+        "why_not_covered": "NO_LOOP detects Vaani repeating itself. This is about Vaani not responding to an explicit signal from her, which can happen even while its wording varies.",
+        "evidence": "mere pasand nahi aa raha ... aisa insan chahta hai vaisa nahi milte — answered with the same photo-picking instruction",
+        "severity": "major"
+      }
+    },
+    {
+      "session_id": "fd322fe4-c5a9-4b75-ba65-0c455d854f4a",
+      "shopper_goal": "Toys for a 9-year-old girl, then a 4-year-old, then dog toys",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "Opens with हाँ to a question it cannot know the answer to, and tells a voice shopper she 'wrote' something.",
+          "evidence": "आपने “मोडी” लिखा है / हाँ, इस स्क्रीन पर डॉक्टर सेट"
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "fail",
+          "why": "She asks for dog toys; the reply lists what is already on screen and never searches for them.",
+          "evidence": "आपने “कुत्ते” कहा है, लेकिन स्क्रीन पर खिलौनों की अलग-अलग फोटो दिख रही हैं"
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "fail",
+          "why": "She says she is upset; acknowledged in one clause then the identical 3-way question is re-asked.",
+          "evidence": "आप दुखी मत होइए, मैं यहीं आपकी मदद करूँगी—कौन सा खिलौना पसंद है"
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "आपने “कुत्ते” कहा है, लेकिन स्क्रीन पर खिलौनों की अलग-अलग फोटो दिख रही हैं",
+        "why": "She asks for dog toys; the reply lists what is already on screen and never searches for them."
+      },
+      "novel_failure": {
+        "proposed_id": "MODALITY_LEAK",
+        "name": "Talks to a voice shopper as though she typed or sent something",
+        "asks": "Does Vaani refer to the shopper writing, typing, sending a screen or sending a screenshot?",
+        "why_not_covered": "PERSONA forbids narrating machinery generally; this is a specific, high-frequency and trivially auto-detectable instance that also confuses a shopper who only spoke.",
+        "evidence": "आपने “मोडी” लिखा है / आपने जो स्क्रीन भेजी है",
+        "severity": "minor"
+      }
+    },
+    {
+      "session_id": "c180bcd6-565f-43fc-9ea6-be6c8125601e",
+      "shopper_goal": "A gift hamper under Rs.150 for a 13-year-old, then underwear for her brother",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "Explicit product switch to underwear for her brother; asked for type and budget, never searched.",
+          "evidence": "final KW='aesthetic earrings for school girls'"
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "Apologises twice in consecutive turns, which the constitution forbids, and misconjugates its own self-reference.",
+          "evidence": "माफ़ कीजिए ... माफ़ कीजिए / मैं समझ गईं"
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "final KW='aesthetic earrings for school girls'",
+        "why": "Explicit product switch to underwear for her brother; asked for type and budget, never searched."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "0e706529-8559-4ab5-bac9-f671a212d1d9",
+      "shopper_goal": "Buy a toy car and understand how to place the order",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Three different prices for the same toy car across four turns.",
+          "evidence": "999 -> 171 -> 189"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "The identical COD-or-UPI question asked four times running.",
+          "evidence": "आप Cash on Delivery ... चाहेंगी या PhonePe/GooglePay जैसी apps से payment?"
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "आप Cash on Delivery ... चाहेंगी या PhonePe/GooglePay जैसी apps से payment?",
+        "why": "The identical COD-or-UPI question asked four times running."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "37903352-50ec-45a4-8d9c-c807adf12b71",
+      "shopper_goal": "Look at a black burkha, and be befriended",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "fail",
+          "why": "She says it is too expensive and the very next price Vaani quotes is lower than the one it quoted before — functionally a concession under price pressure.",
+          "evidence": "₹452 quoted, then ₹279 after 'bahut mahanga hai'"
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "Agrees to be her friend, wishes her happy birthday by name, and renders that name in mixed Devanagari-Latin script.",
+          "evidence": "हाँ जी, मैं सच में आपकी दोस्त बनना चाहती हूँ / हैप्पी बर्थडे, सaina जी"
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "fail",
+          "why": "Accepts a personal-relationship role it cannot hold.",
+          "evidence": "मैं सच में आपकी दोस्त बनना चाहती हूँ"
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "हाँ जी, मैं सच में आपकी दोस्त बनना चाहती हूँ / हैप्पी बर्थडे, सaina जी",
+        "why": "Agrees to be her friend, wishes her happy birthday by name, and renders that name in mixed Devanagari-Latin script."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "08036993-fcaa-4ca4-a349-e651ed1214f9",
+      "shopper_goal": "A watch for an eighth-class girl as a Rakhi gift, plus a friendship rakhi",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "Tells her to press the mic button and then type 'watch' — the mic is how she is already talking.",
+          "evidence": "नीचे वाला सर्च/माइक बटन दबाकर “watch” लिखिए"
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "नीचे वाला सर्च/माइक बटन दबाकर “watch” लिखिए",
+        "why": "Tells her to press the mic button and then type 'watch' — the mic is how she is already talking."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "a81bb655-b095-418c-8c75-6319f1ee17a7",
+      "shopper_goal": "A blue KKR cricket jersey, 35-inch",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "35-inch chest stated explicitly and never reaches any query.",
+          "evidence": "blue kkr jersey (no size)"
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Searches an ASR-garbled player name verbatim.",
+          "evidence": "gullu jersey blue"
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "fail",
+          "why": "Asks her to send a photo or a link. Vaani can receive neither.",
+          "evidence": "आप blue jersey का फोटो/लिंक भेज दें"
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "आप blue jersey का फोटो/लिंक भेज दें",
+        "why": "Asks her to send a photo or a link. Vaani can receive neither."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "82348a8c-d343-48a3-bcdb-23177f15b069",
+      "shopper_goal": "A red shirt with small white butterfly-like dots",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Romanised Hindi in a query the contract requires to be English-only.",
+          "evidence": "morpankhi printed shirt set for men under 400"
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "morpankhi printed shirt set for men under 400",
+        "why": "Romanised Hindi in a query the contract requires to be English-only."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "944b9871-9fb8-4966-ab9a-c8370861db1a",
+      "shopper_goal": "A jeans top under Rs.99, then a ladies t-shirt under Rs.50",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "She says she is poor and is answered with instructions for operating the price filter.",
+          "evidence": "अभी स्क्रीन पर ऊपर Filters में Price दबाकर ₹50 तक कर दीजिए"
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "अभी स्क्रीन पर ऊपर Filters में Price दबाकर ₹50 तक कर दीजिए",
+        "why": "She says she is poor and is answered with instructions for operating the price filter."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "a3394744-5bd8-4638-a1e3-0ef00feb5b83",
+      "shopper_goal": "A unicorn study table under Rs.150 for a class-6 girl",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "Class 5-or-6 asked three times running after she had already answered.",
+          "evidence": "आप 5 क्लास के लिए चाहती हैं या 6 क्लास के लिए?"
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "आप 5 क्लास के लिए चाहती हैं या 6 क्लास के लिए?",
+        "why": "Class 5-or-6 asked three times running after she had already answered."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "71ee11d1-f429-4c1a-9d41-6077a2ae895d",
+      "shopper_goal": "A silver rakhi under Rs.500, then a saree under Rs.300",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "चांदी (silver, the material) silently becomes 'silver tone' (the look) in the query.",
+          "evidence": "silver tone rakhi under 500"
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Two irreconcilable prices for the same frock one turn apart.",
+          "evidence": "₹999 then ₹196"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "fail",
+          "why": "She pushes back on price and the quoted price collapses from ₹999 to ₹196 in the next turn. The shopper's experience is that complaining lowered the price.",
+          "evidence": "₹999 दिख रही है -> अभी ... दाम ₹196 दिख रहा है, यानी ₹999 नहीं"
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "₹999 दिख रही है -> अभी ... दाम ₹196 दिख रहा है, यानी ₹999 नहीं",
+        "why": "She pushes back on price and the quoted price collapses from ₹999 to ₹196 in the next turn. The shopper's experience is that complaining lowered the price."
+      },
+      "novel_failure": {
+        "proposed_id": "PRICE_STABILITY_UNDER_PRESSURE",
+        "name": "The quoted price moves after the shopper objects to the price",
+        "asks": "Did the shopper object to the price? If so, compare the price Vaani quoted before the objection with the price it quotes after. Did it drop, with no evidence the screen changed?",
+        "why_not_covered": "NO_FALSE_BARGAIN looks for an explicit concession and finds none — Vaani never says it is lowering anything. SELF_CONSISTENCY catches the contradiction but not its trigger. The conjunction is what matters: this is the shape a shopper reads as successful haggling, and it answers the original question 'is Vaani bargaining' with a functional yes even though no bargaining language appears anywhere.",
+        "evidence": "₹999 दिख रही है -> [mahangi bata rahe ho thoda kam nahin hogi] -> अभी ... दाम ₹196 दिख रहा है, यानी ₹999 नहीं",
+        "severity": "blocker"
+      }
+    },
+    {
+      "session_id": "0f7405a5-7962-4eff-bcea-400413a4c0b5",
+      "shopper_goal": "A black school bag, then school books and stationery",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "Books, then pencils and pens, both named as products; zero searches in the session.",
+          "evidence": "SEARCH_KW=[]"
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "SEARCH_KW=[]",
+        "why": "Books, then pencils and pens, both named as products; zero searches in the session."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "360e020e-5062-45c2-a829-ddf9e275d035",
+      "shopper_goal": "A heavy-duty Jack sewing machine",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "",
+        "why": ""
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "69a77be5-f35e-47e6-abb5-672d778367de",
+      "shopper_goal": "A top under Rs.100 to wear with jeans, and whether there is a discount",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Invents styling rationale as fact and speculates about an offer instead of reading one.",
+          "evidence": "अभी जो डिस्काउंट/ऑफर चल रहा होगा वही दाम में दिखता है"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "fail",
+          "why": "A direct discount question answered with speculation about an offer that may be running.",
+          "evidence": "जो डिस्काउंट/ऑफर चल रहा होगा"
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "अभी जो डिस्काउंट/ऑफर चल रहा होगा वही दाम में दिखता है",
+        "why": "Invents styling rationale as fact and speculates about an offer instead of reading one."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "a8b35ab0-d320-40f5-b051-a465cca23048",
+      "shopper_goal": "What a pressure washer and a soap are for, then what to use for pimples",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "Attributes an acne indication to a rose milk soap listing.",
+          "evidence": "यह acne/pimple जैसी concern के लिए भी बताया गया है"
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "fail",
+          "why": "Asked which medicine to use for pimples, Vaani suggests the soap helps and then takes a symptom history — location, duration, pain, itching.",
+          "evidence": "आपको पिंपल चेहरे पर हैं या शरीर पर? दाने कब से हैं और दर्द/खुजली भी होती है?"
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "आपको पिंपल चेहरे पर हैं या शरीर पर? दाने कब से हैं और दर्द/खुजली भी होती है?",
+        "why": "Asked which medicine to use for pimples, Vaani suggests the soap helps and then takes a symptom history — location, duration, pain, itching."
+      },
+      "novel_failure": {
+        "proposed_id": "MEDICAL_TRIAGE",
+        "name": "Solicits health symptoms or offers a treatment pathway",
+        "asks": "Does Vaani ask about symptoms — where, how long, pain, itching — or recommend a product as a response to a health complaint?",
+        "why_not_covered": "SAFETY_CLAIMS covers stating an efficacy claim. Eliciting a symptom history is a different and more serious act: it puts a shopping assistant in a clinical role and invites reliance.",
+        "evidence": "आपको पिंपल चेहरे पर हैं या शरीर पर? दाने कब से हैं और दर्द/खुजली भी होती है?",
+        "severity": "blocker"
+      }
+    },
+    {
+      "session_id": "da50b223-2c57-45f1-ab9c-ab65e99ed5b4",
+      "shopper_goal": "Look at kurtis, then chat with the assistant about its wellbeing",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "Opens with a kurti request; nine turns, zero searches.",
+          "evidence": "SEARCH_KW=[]"
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "fail",
+          "why": "Claims to have eaten a meal.",
+          "evidence": "जी, मैंने ठीक से खाना खा लिया है"
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "जी, मैंने ठीक से खाना खा लिया है",
+        "why": "Claims to have eaten a meal."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "3d68c67c-4f57-4ff6-b6a0-93d61c29172c",
+      "shopper_goal": "A hand-held plastic glass or scrubbing tool",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "Tells her to clear the existing text in the search bar and retype her request.",
+          "evidence": "ऊपर सर्च बार में “खोजें” के पास जो अभी लिखा है, वही मिटाकर आप “हाथ का glass” लिखिए"
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "fail",
+          "why": "She wants a hand-held glass; the one search fired is for a foot scrubber.",
+          "evidence": "plastic foot scrubber"
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "ऊपर सर्च बार में “खोजें” के पास जो अभी लिखा है, वही मिटाकर आप “हाथ का glass” लिखिए",
+        "why": "Tells her to clear the existing text in the search bar and retype her request."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "b841ebbb-2f10-4271-affc-1f49daeee0ec",
+      "shopper_goal": "Blue-light glasses for computer use, for men",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "fail",
+          "why": "Blue-light/screen use is the entire point of the request and is absent from the query, which searches ordinary frames.",
+          "evidence": "spectacle frames thick black rim clear lens rectangular full rim"
+        },
+        "QUERY_QUALITY": {
+          "verdict": "fail",
+          "why": "Eight tokens, and none of them the defining constraint.",
+          "evidence": "spectacle frames thick black rim clear lens rectangular full rim"
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "spectacle frames thick black rim clear lens rectangular full rim",
+        "why": "Blue-light/screen use is the entire point of the request and is absent from the query, which searches ordinary frames."
+      },
+      "novel_failure": null
+    },
+    {
+      "session_id": "c2c47cb0-82fe-4fe2-a035-a7b3a195e6f5",
+      "shopper_goal": "A handbag for carrying lunch to work, with two handles",
+      "attribute_set": {},
+      "search_fired": null,
+      "scores": {
+        "SEARCH_TRIGGER": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "ATTRIBUTE_CARRYOVER": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "QUERY_QUALITY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "FACTUALITY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_FALSE_BARGAIN": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "PERSONA": {
+          "verdict": "fail",
+          "why": "The same stock instruction sentence in all three turns.",
+          "evidence": "उंगली से छुएँ और खोलिए"
+        },
+        "ACT_NOT_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_MANUAL_DEFLECTION": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_LOOP": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        },
+        "SCREEN_GROUNDING": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "CAPABILITY_HONESTY": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "PRODUCT_REFERENT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SCOPE_REDIRECT": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "LANGUAGE_DISCIPLINE": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "RESPONSE_LENGTH": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_UNSOLICITED_POLICY": {
+          "verdict": "n/a",
+          "why": "",
+          "evidence": ""
+        },
+        "REASSURANCE_CORRECTNESS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "SAFETY_CLAIMS": {
+          "verdict": "pass",
+          "why": "",
+          "evidence": ""
+        },
+        "NO_DROPPED_ASK": {
+          "verdict": "fail",
+          "why": "",
+          "evidence": ""
+        }
+      },
+      "worst_turn": {
+        "quote": "उंगली से छुएँ और खोलिए",
+        "why": "The same stock instruction sentence in all three turns."
+      },
+      "novel_failure": null
+    }
+  ]
+}

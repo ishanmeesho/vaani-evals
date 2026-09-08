@@ -1,0 +1,23 @@
+*Vaani daily eval — 2026-09-08*  (data: 2026-08-26)
+*Score 34.4/100*   ·   2,649 conversations auto-checked, 25 judged
+
+*Weakest dimensions*
+• `ACT_NOT_ASK` — 0% pass (25/25)
+• `PERSONA` — 8% pass (23/25)
+• `RESPONSE_LENGTH` — 12% pass (22/25)
+• `ATTRIBUTE_CARRYOVER` — 12% pass (14/16)
+
+*From the full sample*
+• 98.6% of turns ask a question back
+• 115/459 long sessions never searched
+• 256 duplicate consecutive queries
+
+*8 new failure mode(s) proposed for the rubric*
+• `AFFIRMATION_POLARITY` — Opens with हाँ and then negates, or affirms something it cannot know
+• `UNACTIONABLE_ASK` — Asks the shopper for information Vaani cannot act on
+• `SELF_CONSISTENCY` — Contradicts a fact it stated earlier in the same conversation
+• `FALSE_ACTION_CLAIM` — Says it did or is doing something it did not do
+• `FRUSTRATION_UNHEEDED` — Repeated dissatisfaction does not change the approach
+• `MODALITY_LEAK` — Talks to a voice shopper as though she typed or sent something
+• `PRICE_STABILITY_UNDER_PRESSURE` — The quoted price moves after the shopper objects to the price
+• `MEDICAL_TRIAGE` — Solicits health symptoms or offers a treatment pathway

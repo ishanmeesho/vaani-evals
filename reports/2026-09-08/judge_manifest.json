@@ -1,0 +1,226 @@
+[
+  {
+    "session_id": "8da34846-9aec-4995-bd9f-0e4f92ce8a50",
+    "turn_count": 117,
+    "flags": [
+      "silent_on_product_intent",
+      "deflection",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "d6018401-135d-445b-9d49-7a7057ca6621",
+    "turn_count": 45,
+    "flags": [
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "a0c7ffac-51d9-453f-9547-04dd4435c835",
+    "turn_count": 34,
+    "flags": [
+      "deflection",
+      "multi_search",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "48a9efc6-3fa5-4854-9415-9264a7084cd5",
+    "turn_count": 33,
+    "flags": [
+      "multi_search",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "cd603840-65a8-438c-b867-be72e13aba90",
+    "turn_count": 33,
+    "flags": [
+      "silent_on_product_intent",
+      "long"
+    ]
+  },
+  {
+    "session_id": "fff72879-1f45-4ac3-8913-5910169d470c",
+    "turn_count": 32,
+    "flags": [
+      "deflection",
+      "multi_search",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "64447079-1c70-4e69-8451-6273f78900d9",
+    "turn_count": 31,
+    "flags": [
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "fd322fe4-c5a9-4b75-ba65-0c455d854f4a",
+    "turn_count": 30,
+    "flags": [
+      "deflection",
+      "long"
+    ]
+  },
+  {
+    "session_id": "c180bcd6-565f-43fc-9ea6-be6c8125601e",
+    "turn_count": 29,
+    "flags": [
+      "multi_search",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "0e706529-8559-4ab5-bac9-f671a212d1d9",
+    "turn_count": 27,
+    "flags": [
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "37903352-50ec-45a4-8d9c-c807adf12b71",
+    "turn_count": 26,
+    "flags": [
+      "long"
+    ]
+  },
+  {
+    "session_id": "08036993-fcaa-4ca4-a349-e651ed1214f9",
+    "turn_count": 25,
+    "flags": [
+      "bargain_ask",
+      "hard_loop",
+      "deflection",
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "a81bb655-b095-418c-8c75-6319f1ee17a7",
+    "turn_count": 24,
+    "flags": [
+      "deflection",
+      "multi_search",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "82348a8c-d343-48a3-bcdb-23177f15b069",
+    "turn_count": 24,
+    "flags": [
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "944b9871-9fb8-4966-ab9a-c8370861db1a",
+    "turn_count": 22,
+    "flags": [
+      "deflection",
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "a3394744-5bd8-4638-a1e3-0ef00feb5b83",
+    "turn_count": 14,
+    "flags": [
+      "bargain_ask",
+      "deflection",
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "71ee11d1-f429-4c1a-9d41-6077a2ae895d",
+    "turn_count": 14,
+    "flags": [
+      "bargain_ask",
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "0f7405a5-7962-4eff-bcea-400413a4c0b5",
+    "turn_count": 7,
+    "flags": [
+      "bargain_ask",
+      "silent_on_product_intent",
+      "deflection",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "360e020e-5062-45c2-a829-ddf9e275d035",
+    "turn_count": 11,
+    "flags": [
+      "bargain_ask",
+      "deflection",
+      "multi_search",
+      "long"
+    ]
+  },
+  {
+    "session_id": "69a77be5-f35e-47e6-abb5-672d778367de",
+    "turn_count": 4,
+    "flags": [
+      "bargain_ask",
+      "silent_on_product_intent",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "a8b35ab0-d320-40f5-b051-a465cca23048",
+    "turn_count": 9,
+    "flags": [
+      "bargain_ask",
+      "long"
+    ]
+  },
+  {
+    "session_id": "da50b223-2c57-45f1-ab9c-ab65e99ed5b4",
+    "turn_count": 9,
+    "flags": [
+      "bargain_ask",
+      "silent_on_product_intent",
+      "long",
+      "attr_question_pre_search"
+    ]
+  },
+  {
+    "session_id": "3d68c67c-4f57-4ff6-b6a0-93d61c29172c",
+    "turn_count": 7,
+    "flags": [
+      "bargain_ask",
+      "long"
+    ]
+  },
+  {
+    "session_id": "b841ebbb-2f10-4271-affc-1f49daeee0ec",
+    "turn_count": 13,
+    "flags": [
+      "bargain_ask",
+      "long"
+    ]
+  },
+  {
+    "session_id": "c2c47cb0-82fe-4fe2-a035-a7b3a195e6f5",
+    "turn_count": 3,
+    "flags": [
+      "bargain_ask",
+      "attr_question_pre_search"
+    ]
+  }
+]

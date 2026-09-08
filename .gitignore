@@ -1,0 +1,10 @@
+# Pulled conversation data is never committed — it is re-pullable from Metabase
+# with the toolkit, and it contains real shopper utterances.
+data/
+reports/*/conversations.json
+reports/*/batches/
+venv/
+.venv/
+.env
+__pycache__/
+*.pyc
