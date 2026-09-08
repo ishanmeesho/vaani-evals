@@ -610,7 +610,20 @@ scoring_v2:
     row in reports/history.jsonl carries `rubric_version`; the artifact draws a
     break in the trend line at a version change rather than joining across it.
     Never report a delta across a version boundary.
-  v1_baseline: 34.4      # 2026-09-08, 19 dimensions, n=25 judged
+  baseline: 43.2   # 2026-09-08, rubric v3, 28 dimensions, n=25 judged
+  baseline_note: >
+    The 2026-09-08 run was re-judged against all 28 dimensions once v2 and v3
+    existed, so the baseline is a v3 score and every later run is directly
+    comparable to it. Its judge fingerprint is c1341b53c59197fb.
+
+    Under v1's 19 dimensions the same run scored 34.4. The v3 number is HIGHER,
+    and not because anything improved: the nine dimensions added afterwards
+    happen to have better pass rates on this sample than the original nineteen
+    (SELF_CONSISTENCY 80%, MODALITY_LEAK 80%, FALSE_ACTION_CLAIM 94%,
+    UNACTIONABLE_ASK 92%), which lifts a weight-normalised composite. 34.4 and
+    43.2 are two measurements of one unchanged day. Do not read the difference
+    between them as movement — it is the reason the harness refuses to print a
+    delta across a rubric version change at all.
 
 # ═══════════════════════════════════════════════════════════════════
 # v3 ADDITION — 2026-09-08, from the commerce-agents `commerce-evals`
@@ -691,3 +704,4 @@ dimensions_v3:
 # QUERY_QUALITY, ATTRIBUTE_CARRYOVER and FALSE_ACTION_CLAIM grade the tool
 # argument (`search_keyword`) and the action that fired, never the sentence
 # describing it.
+

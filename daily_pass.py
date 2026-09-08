@@ -123,8 +123,29 @@ def judge_fingerprint():
     """
     h = hashlib.sha256()
     h.update(JUDGE_MODEL.encode())
-    h.update(str(RUBRIC_VERSION).encode())
-    for rel in ("rubric.yaml", "prompts/judge_system.md", "prompts/judge_batch.md"):
+
+    # Only what reaches a judge. Hashing rubric.yaml wholesale was wrong: adding
+    # a note about the baseline to its `scoring` block moved the fingerprint and
+    # would have made the next run refuse to diff against that very baseline.
+    # A comment is not a change to the measurement. So hash the dimension
+    # definitions — every field of them, since all of them are rendered into the
+    # single-criterion prompts — and skip `meta`, `scoring*` and anything else
+    # that is bookkeeping about the rubric rather than part of it.
+    try:
+        import yaml as _y
+        rub = _y.safe_load(open(os.path.join(EVAL_DIR, "rubric.yaml")))
+        dims = []
+        for key in sorted(k for k in rub if k == "dimensions" or k.startswith("dimensions_v")):
+            dims += list(rub.get(key) or [])
+        canonical = json.dumps(sorted(dims, key=lambda d: d["id"]),
+                               sort_keys=True, ensure_ascii=False)
+        h.update(canonical.encode())
+    except Exception:
+        # Fall back to the whole file rather than silently fingerprinting nothing.
+        h.update(open(os.path.join(EVAL_DIR, "rubric.yaml"), "rb").read())
+
+    # The judge prompts are decision-bearing in full, including their prose.
+    for rel in ("prompts/judge_system.md", "prompts/judge_batch.md"):
         path = os.path.join(EVAL_DIR, rel)
         if os.path.exists(path):
             h.update(open(path, "rb").read())
