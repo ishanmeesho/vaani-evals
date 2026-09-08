@@ -20,7 +20,8 @@ does not yet cover — which is how the rubric grows.
 | `autochecks.py` | Deterministic checks over 100% of the sample. Counts countable things; never judges. |
 | `daily_pass.py` | The orchestrator: `sample` → `select` → (judge) → `aggregate` → `report`. |
 | `gen_langfuse_prompts.py` | Regenerates `prompts/langfuse/` from `rubric.yaml`. |
-| `push_langfuse.py` | Pushes prompts and per-dimension scores to Langfuse. |
+| `setup_langfuse.sh` | **One command to load everything into Langfuse.** Regenerates, checks reachability, verifies the keys, pushes. Must run from the VPN — the Meesho instance is internal-only. |
+| `push_langfuse.py` | The pusher `setup_langfuse.sh` drives: `verify`, `prompts`, `scores`. |
 | `runbook.md` | **The daily hour, step by step.** Start here. |
 | `reports/<date>/` | Per-run sample, autochecks, judge batches, verdicts, aggregate, report, Slack text. |
 | `reports/history.jsonl` | One row per run — what the dashboard plots. |

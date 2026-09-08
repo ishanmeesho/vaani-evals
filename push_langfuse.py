@@ -66,6 +66,48 @@ def call(host, headers, path, payload, method="POST"):
         return e.code, {"error": e.read().decode()[:500]}
 
 
+def cmd_verify(args):
+    """Preflight: are the credentials good, and which prompts API does this
+    instance speak? Run this before a push so a bad key or an older build
+    surfaces here instead of half way through 28 writes."""
+    host, headers = creds()
+    print(f"host: {host}")
+
+    status, body = call(host, headers, "/api/public/health", None, method="GET")
+    print(f"  health           HTTP {status}")
+
+    status, body = call(host, headers, "/api/public/projects", None, method="GET")
+    if status == 200:
+        names = [p.get("name") for p in (body.get("data") or body.get("projects") or [])]
+        print(f"  auth             HTTP {status}  project(s): {names or '(none named)'}")
+    elif status in (401, 403):
+        sys.exit(f"  auth             HTTP {status} — the key pair was rejected. "
+                 f"Check LANGFUSE_PUBLIC_KEY / LANGFUSE_SECRET_KEY belong to THIS host.")
+    else:
+        print(f"  auth             HTTP {status}  {str(body)[:200]}")
+
+    api = prompts_api(host, headers)
+    print(f"  prompts API      {api}")
+    print(f"\n{len(json.load(open(MANIFEST)))} prompts ready to push. "
+          f"Run: python3 push_langfuse.py prompts")
+
+
+def prompts_api(host, headers):
+    """Return the prompts endpoint this instance accepts.
+
+    Langfuse moved prompt creation to /api/public/v2/prompts; older
+    self-hosted builds only have /api/public/prompts. Probe rather than
+    assume, because a 404 on the wrong path looks like an auth problem.
+    """
+    status, _ = call(host, headers, "/api/public/v2/prompts?limit=1", None, method="GET")
+    if status in (200, 401, 403):
+        return "/api/public/v2/prompts"
+    status, _ = call(host, headers, "/api/public/prompts?limit=1", None, method="GET")
+    if status in (200, 401, 403):
+        return "/api/public/prompts"
+    return "/api/public/v2/prompts"  # default; the push will report the real error
+
+
 def cmd_prompts(args):
     payloads = json.load(open(MANIFEST))
     if args.dry_run:
@@ -76,9 +118,11 @@ def cmd_prompts(args):
         return
 
     host, headers = creds()
+    api = prompts_api(host, headers)
+    print(f"pushing {len(payloads)} prompts to {host}{api}\n")
     ok, bad = 0, []
     for p in payloads:
-        status, body = call(host, headers, "/api/public/v2/prompts", p)
+        status, body = call(host, headers, api, p)
         if status in (200, 201):
             ok += 1
             print(f"  ok   {p['name']}  v{body.get('version', '?')}")
@@ -148,6 +192,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    p = sub.add_parser("verify"); p.set_defaults(fn=cmd_verify)
     p = sub.add_parser("prompts"); p.set_defaults(fn=cmd_prompts)
     p.add_argument("--dry-run", action="store_true")
     p = sub.add_parser("scores"); p.set_defaults(fn=cmd_scores)

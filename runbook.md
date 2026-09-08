@@ -147,8 +147,7 @@ with a weight, a severity, real `fail_examples`, and the `why_not_covered`
 reasoning from the proposal. Then:
 
 ```bash
-python3 gen_langfuse_prompts.py
-python3 push_langfuse.py prompts     # needs LANGFUSE_* keys
+./setup_langfuse.sh          # regenerate, verify, push. From the VPN.
 ```
 
 **Bump `meta.version` when you add dimensions, and never report a delta across a
@@ -161,7 +160,7 @@ is a different measurement.
 ## 6. Publish (5 min)
 
 ```bash
-python3 push_langfuse.py scores --run $(date +%F)   # optional
+./setup_langfuse.sh --with-scores --run=$(date +%F)   # optional, from the VPN
 ```
 
 Then post `reports/<run>/slack.txt` to Slack and republish the dashboard
