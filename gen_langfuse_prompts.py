@@ -195,8 +195,35 @@ def main():
             },
         })
 
+    # A one-page review surface. Reading 28 files to check the decision rules is
+    # a chore nobody does twice; reading one page of PASS/FAIL lines is a review
+    # someone will actually finish.
+    idx = ["# Vaani eval prompts — review index", "",
+           f"{len(payloads)} single-criterion judge prompts, generated from "
+           f"`rubric.yaml` v{rubric['meta']['version']}. Do not hand-edit the "
+           f"files in this directory — edit the rubric and regenerate.", "",
+           "Each prompt asks one question and returns `{score, verdict, "
+           "reasoning, evidence}`, scoring 1 for pass, 0 for fail and `null` "
+           "for not-applicable so an n/a never counts as a pass. Judge model "
+           f"`{os.environ.get('VAANI_JUDGE_MODEL', 'claude-sonnet-5')}` at "
+           "temperature 0.", "",
+           "The decision rule is the thing to review. Everything else in a "
+           "prompt is context and examples supporting it.", ""]
+    for sev in ("blocker", "major", "minor"):
+        rows = [d for d in dims if d["severity"] == sev]
+        if not rows:
+            continue
+        idx += [f"## {sev.title()} ({len(rows)})", ""]
+        for d in sorted(rows, key=lambda x: -x["weight"]):
+            idx += [f"### `{d['id']}` — {d['name']}",
+                    f"weight {d['weight']} · checked by {d.get('check')} · "
+                    f"[prompt]({d['id']}.md)", "",
+                    f"> {(d.get('rubric') or '(no decision rule)').strip()}", ""]
+    open(os.path.join(OUT, "INDEX.md"), "w").write("\n".join(idx))
+
     json.dump(payloads, open(os.path.join(OUT, "prompts.json"), "w"), indent=2, ensure_ascii=False)
     print(f"{len(payloads)} prompts -> {OUT}/")
+    print(f"review index: {OUT}/INDEX.md")
     print(f"manifest: {OUT}/prompts.json")
     for p in payloads:
         print(f"  {p['name']}  ({p['config']['severity']}, w={p['config']['weight']})")

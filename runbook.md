@@ -22,18 +22,35 @@ the mb-session-insights repo (`archive/turn-classifiers/`).
 **For an unattended daily run, use an API key, not a cookie.** A session cookie
 expires with the browser session, which means a scheduled pass will stop dead
 roughly once a day and wait for a human. `toolkit/mb_auth.py` already supports
-`MB_AUTH_MODE=api_key` with `MB_API_KEY` — a Metabase Personal API Key does not
-expire, so with one set in the environment the loop runs on its own
-indefinitely. Ask a Metabase admin for one; it inherits your own permissions and
-grants nothing extra. This is the single change that makes the daily pass fully
-autonomous, and it is worth making before anything else here.
+`MB_AUTH_MODE=api_key` with `MB_API_KEY`. A Metabase API key has no expiry, so
+with one in the environment the loop runs on its own indefinitely.
 
-Until then, the cookie route, fetched fresh each run and never written to
-`.env`:
+Getting one is **admin-only** and the key is **group-scoped, not user-scoped**
+(confirmed against Metabase's own docs, 2026-09-08). An admin goes to the grid
+icon → Admin → Settings → Authentication → API Keys → Manage → Create API Key,
+names it, and picks a group — *the key carries that group's permissions, not the
+creating admin's*. So unlike the session cookie, which is exactly your own
+access, an API key is a new credential whose reach is whatever group it is put
+in. Ask for it in a group with read access to the `gold` schema on the Presto
+database and nothing more; do not accept one in an admin group for convenience.
+Metabase shows the key once and cannot show it again, and it is revoked by
+deleting it.
+
+That trade — a non-expiring credential in exchange for group-scoped rather than
+personal permissions — is the one decision to make here. It is what makes the
+daily pass fully autonomous.
+
+The cookie route, if you would rather not add a credential — fetched fresh each
+run and never written to `.env`:
 
 1. Log into `https://metabase-main.bi.meeshogcp.in`
 2. DevTools → Application → Cookies → `metabase.SESSION` → copy the value
 3. `export MB_COOKIE='<value>'`
+
+For an unattended run on a cookie, set `MB_SESSION_TOKEN` in the Claude Code
+environment's variables rather than passing `--cookie`. The scheduled pass picks
+it up and runs without asking; when the cookie expires it stops and asks in
+`#vaani-eval-report` for a fresh one, which in practice is every day or two.
 
 If the daily trigger fires with neither `MB_API_KEY` nor `MB_SESSION_TOKEN` in
 the environment, the run stops at stage 1 and says so. That is the intended
