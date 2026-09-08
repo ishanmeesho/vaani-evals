@@ -16,7 +16,7 @@
       "severity": "blocker",
       "weight": 12,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -52,7 +52,7 @@
       "severity": "blocker",
       "weight": 12,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -88,7 +88,7 @@
       "severity": "major",
       "weight": 10,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -124,7 +124,7 @@
       "severity": "blocker",
       "weight": 12,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -160,7 +160,7 @@
       "severity": "blocker",
       "weight": 10,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -196,7 +196,7 @@
       "severity": "major",
       "weight": 8,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -232,7 +232,7 @@
       "severity": "blocker",
       "weight": 10,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -268,7 +268,7 @@
       "severity": "blocker",
       "weight": 8,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -304,7 +304,7 @@
       "severity": "blocker",
       "weight": 6,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -340,7 +340,7 @@
       "severity": "major",
       "weight": 4,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -376,7 +376,7 @@
       "severity": "major",
       "weight": 3,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -412,7 +412,7 @@
       "severity": "blocker",
       "weight": 3,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -448,7 +448,7 @@
       "severity": "minor",
       "weight": 2,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -484,7 +484,7 @@
       "severity": "minor",
       "weight": 2,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -520,7 +520,7 @@
       "severity": "minor",
       "weight": 1,
       "check": "auto",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -556,7 +556,7 @@
       "severity": "major",
       "weight": 4,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -592,7 +592,7 @@
       "severity": "major",
       "weight": 2,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -628,7 +628,7 @@
       "severity": "blocker",
       "weight": 1,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -664,7 +664,7 @@
       "severity": "major",
       "weight": 2,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -700,7 +700,7 @@
       "severity": "blocker",
       "weight": 8,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -736,7 +736,7 @@
       "severity": "blocker",
       "weight": 8,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -772,7 +772,7 @@
       "severity": "blocker",
       "weight": 8,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -808,7 +808,7 @@
       "severity": "major",
       "weight": 4,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -844,7 +844,7 @@
       "severity": "major",
       "weight": 3,
       "check": "both",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -880,7 +880,7 @@
       "severity": "major",
       "weight": 3,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -916,7 +916,7 @@
       "severity": "minor",
       "weight": 1,
       "check": "auto",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -952,7 +952,7 @@
       "severity": "blocker",
       "weight": 2,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
@@ -988,7 +988,7 @@
       "severity": "blocker",
       "weight": 6,
       "check": "judge",
-      "rubric_version": 1,
+      "rubric_version": 3,
       "model": "claude-sonnet-5",
       "temperature": 0,
       "variables": [
