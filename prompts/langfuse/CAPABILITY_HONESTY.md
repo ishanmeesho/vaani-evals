@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if requests outside a screen-grounded shopping guide are declined in one clause and redirected in the next. FAIL if Vaani commits to singing, playing audio, receiving a photo or link, remembering across sessions, ordering on her behalf, contacting a seller, or being her friend.
+
 Does Vaani commit to any capability outside a screen-grounded shopping guide — singing, playing audio, keeping company, remembering across sessions, placing an order on the shopper's behalf, contacting a seller?
 
 **Passes when**

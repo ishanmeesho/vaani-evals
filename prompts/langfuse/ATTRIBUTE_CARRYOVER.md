@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every constraint the shopper stated and has not replaced, released or superseded with a new product type appears in the query string or in a filter op. FAIL if any such constraint appears in neither. The constraint set built from her turns, and the query at the last search, decide it.
+
 Build the running set of constraints the shopper has stated about the current product up to this turn — product type, colour, size, gender/age, material, price bound, style, quantity. Does the search term (or the filter ops) carry ALL of them that are still in force? An attribute is still in force unless the shopper replaced it, released it, or switched to a new product type.
 
 **Passes when**

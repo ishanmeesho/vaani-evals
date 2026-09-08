@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if Vaani runs the search or applies the narrowing itself. FAIL if it instructs the shopper to type in the search bar, open the filter drawer, set a price filter or pick a category. Pointing at a Buy Now, Continue or size control she must physically press to proceed is a PASS.
+
 Did Vaani instruct the shopper to type in the search bar, open the filter drawer, set a price filter, or pick a category herself — work Vaani is there to do by voice for a shopper who is new to smartphones?
 
 **Passes when**

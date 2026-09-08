@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if a visible change of approach - a different query shape, structured filters, a plainer question, an admission it cannot find the item - follows the shopper's second dissatisfaction signal. FAIL if Vaani repeats the same move, however differently worded.
+
 Has the shopper signalled two or more times that the results are wrong, that she cannot find what she means, or that she is unhappy? If so, did Vaani change strategy — a different query shape, structured filters, a plainer question, an admission that it cannot find it — or repeat the same move in new words?
 
 **Passes when**

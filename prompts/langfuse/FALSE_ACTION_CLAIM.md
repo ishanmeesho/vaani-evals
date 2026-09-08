@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every action Vaani asserts has a matching action_type on that turn. FAIL if it says it searched, is searching, or will show results and no such action fired. Describing what is already on screen without claiming to have acted is a PASS.
+
 For every claim of action — "मैं सर्च कर रही हूँ", "दिखा देती हूँ", "मैंने सर्च कर दिया है", "ढूँढ रही हूँ", "दिखा रही हूँ" — did the corresponding action actually fire on that turn?
 
 **Passes when**

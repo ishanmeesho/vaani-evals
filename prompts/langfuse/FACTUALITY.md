@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every price, discount, rating, review count, size, stock, date, policy and product identity Vaani states is attributable to the screenshot, product data or order data it was given. FAIL if any one of them is not, including a hedged or inferred one. Correcting the shopper with a number that is on screen is a PASS, not a FAIL.
+
 List each factual claim in Vaani's turn — price, discount %, rating, review count, size availability, delivery date or window, stock, policy, material, product identity. For each, is it attributable to the screenshot, the product data, or the order data it was given? Or was it produced from the model's own priors?
 
 **Passes when**

@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every turn carrying product or narrowing intent has a SEARCH on it, and no turn without such intent has one. FAIL if a turn names a product, an attribute, a price bound or a cheap/quality cue and search_keywords gained nothing for it, or if a search fired on a greeting, a policy question or order help. The turn's action_type and the search_keywords list decide it, not what Vaani said it was doing.
+
 For every turn where the shopper expressed or carried a product intent (named a product, asked for something different, gave an attribute, a price bound, or a cheap/quality cue), did Vaani actually emit a SEARCH action? And conversely, did it avoid firing a search on turns that were pure information questions, greetings, or order/payment help?
 
 **Passes when**

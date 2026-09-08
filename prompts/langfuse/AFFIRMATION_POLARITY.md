@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if a leading haan, ji haan or nahin agrees with the content after it and with what Vaani actually knows. FAIL if haan introduces a negation, or affirms knowledge Vaani does not have.
+
 Where the reply opens with हाँ / जी हाँ / नहीं, does that particle agree with the content that follows it, and with what Vaani actually knows?
 
 **Passes when**

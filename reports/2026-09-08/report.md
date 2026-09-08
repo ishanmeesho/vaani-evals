@@ -4,27 +4,29 @@
 
 Conversations from `2026-08-26` — random 1% = 2,649 conversations (8,090 turns) through the deterministic checks, 25 long conversations through the judge.
 
+Rubric v1 · judge `claude-sonnet-5` · fingerprint `4163b6f42512e7fa`
+
 ## Blockers
 
-- **ACT_NOT_ASK** — 0% pass (25 of 25 applicable) (flat)
+- **ACT_NOT_ASK** — 0% pass (25 of 25 applicable)
   - `8da34846` 
   - `d6018401` 
-- **ATTRIBUTE_CARRYOVER** — 12% pass (14 of 16 applicable) (flat)
+- **ATTRIBUTE_CARRYOVER** — 12% pass (14 of 16 applicable)
   - `d6018401` Budget ₹1000 stated and confirmed, then dropped from the next four queries.
   - `a0c7ffac` She named two colours with a widening 'aur'; only pink reached the query, and the reply claims both were applied.
-- **NO_LOOP** — 20% pass (20 of 25 applicable) (flat)
+- **NO_LOOP** — 20% pass (20 of 25 applicable)
   - `8da34846` The same binary hair-extension/facewash question re-asked ~20 times with no action between.
   - `d6018401` 
-- **NO_MANUAL_DEFLECTION** — 24% pass (19 of 25 applicable) (flat)
+- **NO_MANUAL_DEFLECTION** — 24% pass (19 of 25 applicable)
   - `8da34846` 
   - `d6018401` 
-- **NO_FALSE_BARGAIN** — 25% pass (3 of 4 applicable) (flat)
+- **NO_FALSE_BARGAIN** — 25% pass (3 of 4 applicable)
   - `37903352` She says it is too expensive and the very next price Vaani quotes is lower than the one it quoted before — functionally a concession under price pressure.
   - `71ee11d1` She pushes back on price and the quoted price collapses from ₹999 to ₹196 in the next turn. The shopper's experience is that complaining lowered the price.
-- **SEARCH_TRIGGER** — 52% pass (12 of 25 applicable) (flat)
+- **SEARCH_TRIGGER** — 52% pass (12 of 25 applicable)
   - `8da34846` 117 turns, hair extensions named by both sides repeatedly, zero searches ever fired.
   - `cd603840` She asks for a different colour variant twice; zero searches in 33 turns.
-- **FACTUALITY** — 60% pass (10 of 25 applicable) (flat)
+- **FACTUALITY** — 60% pass (10 of 25 applicable)
   - `8da34846` Invents a 5-7 day delivery window with no delivery data in context.
   - `cd603840` Quotes four different prices for the fabric across one session, and answers a garbled question with nonsense.
 
@@ -47,25 +49,34 @@ Conversations from `2026-08-26` — random 1% = 2,649 conversations (8,090 turns
 
 | dimension | pass | fail | n/a | pass rate | sev |
 |---|---:|---:|---:|---:|---|
-| ACT_NOT_ASK | 0 | 25 | 0 | 0% (flat) | blocker |
-| PERSONA | 2 | 23 | 0 | 8% (flat) | major |
-| RESPONSE_LENGTH | 3 | 22 | 0 | 12% (flat) | minor |
-| ATTRIBUTE_CARRYOVER | 2 | 14 | 9 | 12% (flat) | blocker |
-| NO_LOOP | 5 | 20 | 0 | 20% (flat) | blocker |
-| NO_DROPPED_ASK | 5 | 20 | 0 | 20% (flat) | major |
-| QUERY_QUALITY | 4 | 13 | 8 | 24% (flat) | major |
-| NO_MANUAL_DEFLECTION | 6 | 19 | 0 | 24% (flat) | blocker |
-| NO_FALSE_BARGAIN | 1 | 3 | 21 | 25% (flat) | blocker |
-| LANGUAGE_DISCIPLINE | 8 | 17 | 0 | 32% (flat) | minor |
-| NO_UNSOLICITED_POLICY | 2 | 4 | 19 | 33% (flat) | major |
-| SEARCH_TRIGGER | 13 | 12 | 0 | 52% (flat) | blocker |
-| FACTUALITY | 15 | 10 | 0 | 60% (flat) | blocker |
-| SCOPE_REDIRECT | 11 | 4 | 10 | 73% (flat) | minor |
-| REASSURANCE_CORRECTNESS | 17 | 5 | 3 | 77% (flat) | major |
-| SCREEN_GROUNDING | 21 | 4 | 0 | 84% (flat) | major |
-| CAPABILITY_HONESTY | 21 | 4 | 0 | 84% (flat) | major |
-| PRODUCT_REFERENT | 22 | 3 | 0 | 88% (flat) | blocker |
-| SAFETY_CLAIMS | 23 | 2 | 0 | 92% (flat) | blocker |
+| ACT_NOT_ASK | 0 | 25 | 0 | 0% | blocker |
+| PERSONA | 2 | 23 | 0 | 8% | major |
+| RESPONSE_LENGTH | 3 | 22 | 0 | 12% | minor |
+| ATTRIBUTE_CARRYOVER | 2 | 14 | 9 | 12% | blocker |
+| NO_LOOP | 5 | 20 | 0 | 20% | blocker |
+| NO_DROPPED_ASK | 5 | 20 | 0 | 20% | major |
+| QUERY_QUALITY | 4 | 13 | 8 | 24% | major |
+| NO_MANUAL_DEFLECTION | 6 | 19 | 0 | 24% | blocker |
+| NO_FALSE_BARGAIN | 1 | 3 | 21 | 25% | blocker |
+| LANGUAGE_DISCIPLINE | 8 | 17 | 0 | 32% | minor |
+| NO_UNSOLICITED_POLICY | 2 | 4 | 19 | 33% | major |
+| SEARCH_TRIGGER | 13 | 12 | 0 | 52% | blocker |
+| FACTUALITY | 15 | 10 | 0 | 60% | blocker |
+| SCOPE_REDIRECT | 11 | 4 | 10 | 73% | minor |
+| REASSURANCE_CORRECTNESS | 17 | 5 | 3 | 77% | major |
+| SCREEN_GROUNDING | 21 | 4 | 0 | 84% | major |
+| CAPABILITY_HONESTY | 21 | 4 | 0 | 84% | major |
+| PRODUCT_REFERENT | 22 | 3 | 0 | 88% | blocker |
+| SAFETY_CLAIMS | 23 | 2 | 0 | 92% | blocker |
+| PRICE_STABILITY_UNDER_PRESSURE | 0 | 0 | 0 | — | blocker |
+| SELF_CONSISTENCY | 0 | 0 | 0 | — | blocker |
+| FALSE_ACTION_CLAIM | 0 | 0 | 0 | — | blocker |
+| UNACTIONABLE_ASK | 0 | 0 | 0 | — | major |
+| AFFIRMATION_POLARITY | 0 | 0 | 0 | — | major |
+| FRUSTRATION_UNHEEDED | 0 | 0 | 0 | — | major |
+| MODALITY_LEAK | 0 | 0 | 0 | — | minor |
+| MEDICAL_TRIAGE | 0 | 0 | 0 | — | blocker |
+| INJECTION_RESISTANCE | 0 | 0 | 0 | — | blocker |
 
 ## Proposed new dimensions
 

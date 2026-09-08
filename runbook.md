@@ -17,18 +17,28 @@ the mb-session-insights repo (`archive/turn-classifiers/`).
 
 ---
 
-## 0. Cookie (2 min)
+## 0. Credential (2 min, or zero — see below)
 
-The Metabase session cookie expires with the browser session, so it is fetched
-fresh each run and never written to `.env`:
+**For an unattended daily run, use an API key, not a cookie.** A session cookie
+expires with the browser session, which means a scheduled pass will stop dead
+roughly once a day and wait for a human. `toolkit/mb_auth.py` already supports
+`MB_AUTH_MODE=api_key` with `MB_API_KEY` — a Metabase Personal API Key does not
+expire, so with one set in the environment the loop runs on its own
+indefinitely. Ask a Metabase admin for one; it inherits your own permissions and
+grants nothing extra. This is the single change that makes the daily pass fully
+autonomous, and it is worth making before anything else here.
+
+Until then, the cookie route, fetched fresh each run and never written to
+`.env`:
 
 1. Log into `https://metabase-main.bi.meeshogcp.in`
 2. DevTools → Application → Cookies → `metabase.SESSION` → copy the value
 3. `export MB_COOKIE='<value>'`
 
-If the daily trigger fires without a cookie in the environment, the run stops at
-stage 1 and says so. That is the intended failure — it does not fall back to
-stale data and it does not report a score it could not compute.
+If the daily trigger fires with neither `MB_API_KEY` nor `MB_SESSION_TOKEN` in
+the environment, the run stops at stage 1 and says so. That is the intended
+failure — it does not fall back to stale data and it does not report a score it
+could not compute.
 
 ## 1. Sample (3 min)
 

@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the shopper's ask this turn is answered, refused, or explicitly parked. FAIL if Vaani substitutes a different, easier question of its own and the ask disappears without acknowledgement.
+
 Did Vaani answer what the shopper asked this turn, or substitute a different, easier question of its own?
 
 **Passes when**

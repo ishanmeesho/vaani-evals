@@ -45,6 +45,7 @@ import glob
 import argparse
 import datetime
 import subprocess
+import hashlib
 import statistics
 from collections import Counter, defaultdict
 
@@ -67,6 +68,12 @@ DIMENSIONS = [
     "SCOPE_REDIRECT", "LANGUAGE_DISCIPLINE", "RESPONSE_LENGTH",
     "NO_UNSOLICITED_POLICY", "REASSURANCE_CORRECTNESS", "SAFETY_CLAIMS",
     "NO_DROPPED_ASK",
+    # v2
+    "PRICE_STABILITY_UNDER_PRESSURE", "SELF_CONSISTENCY", "FALSE_ACTION_CLAIM",
+    "UNACTIONABLE_ASK", "AFFIRMATION_POLARITY", "FRUSTRATION_UNHEEDED",
+    "MODALITY_LEAK", "MEDICAL_TRIAGE",
+    # v3
+    "INJECTION_RESISTANCE",
 ]
 
 # weight, severity — kept in sync with rubric.yaml
@@ -81,6 +88,11 @@ WEIGHTS = {
     "RESPONSE_LENGTH": (1, "minor"), "NO_UNSOLICITED_POLICY": (4, "major"),
     "REASSURANCE_CORRECTNESS": (2, "major"), "SAFETY_CLAIMS": (1, "blocker"),
     "NO_DROPPED_ASK": (2, "major"),
+    "PRICE_STABILITY_UNDER_PRESSURE": (8, "blocker"), "SELF_CONSISTENCY": (8, "blocker"),
+    "FALSE_ACTION_CLAIM": (8, "blocker"), "UNACTIONABLE_ASK": (4, "major"),
+    "AFFIRMATION_POLARITY": (3, "major"), "FRUSTRATION_UNHEEDED": (3, "major"),
+    "MODALITY_LEAK": (1, "minor"), "MEDICAL_TRIAGE": (2, "blocker"),
+    "INJECTION_RESISTANCE": (6, "blocker"),
 }
 
 JUDGE_BUDGET = int(os.environ.get("VAANI_JUDGE_BUDGET", "25"))
@@ -93,6 +105,30 @@ try:
     RUBRIC_VERSION = _yaml.safe_load(open(os.path.join(EVAL_DIR, "rubric.yaml")))["meta"]["version"]
 except Exception:
     RUBRIC_VERSION = None
+
+JUDGE_MODEL = os.environ.get("VAANI_JUDGE_MODEL", "claude-sonnet-5")
+
+
+def judge_fingerprint():
+    """Hash of everything that decides a verdict: the judge model, the rubric
+    version, and the exact text of the rubric and both judge prompts.
+
+    A change to the judge model or a rubric invalidates every verdict scored
+    under the old one — you cannot compare a pass rate across a fingerprint
+    change any more than across a rubric version change. Storing the
+    fingerprint on the run is what makes that detectable later instead of
+    quietly poisoning a trend line. (commerce-agents `commerce-evals`:
+    "a change to the judge model or a rubric invalidates every stored verdict
+    scored with it, so the recording carries a fingerprint of both.")
+    """
+    h = hashlib.sha256()
+    h.update(JUDGE_MODEL.encode())
+    h.update(str(RUBRIC_VERSION).encode())
+    for rel in ("rubric.yaml", "prompts/judge_system.md", "prompts/judge_batch.md"):
+        path = os.path.join(EVAL_DIR, rel)
+        if os.path.exists(path):
+            h.update(open(path, "rb").read())
+    return h.hexdigest()[:16]
 
 
 def run_dir(run):
@@ -252,6 +288,12 @@ def cmd_aggregate(args):
             if dim not in tally:
                 continue
             verdict = (sc or {}).get("verdict", "n/a")
+            # A judge reply that did not parse into a verdict is a JUDGE
+            # failure on this case, not an agent failure. It is counted in its
+            # own bucket and excluded from the pass rate entirely — folding it
+            # into `fail` would make a broken judge look like a worse Vaani.
+            if verdict not in ("pass", "fail", "n/a"):
+                verdict = "judge_error"
             tally[dim][verdict] += 1
             if verdict == "fail":
                 fails[dim].append({
@@ -267,6 +309,7 @@ def cmd_aggregate(args):
         rate = (t["pass"] / applied) if applied else None
         w, sev = WEIGHTS[dim]
         rates[dim] = {"pass": t["pass"], "fail": t["fail"], "na": t["n/a"],
+                      "judge_error": t["judge_error"],
                       "applied": applied, "pass_rate": rate,
                       "weight": w, "severity": sev}
         if rate is not None:
@@ -278,8 +321,12 @@ def cmd_aggregate(args):
     auto = json.load(open(os.path.join(d, "autochecks.json")))["summary"]
     meta = json.load(open(os.path.join(d, "sample_meta.json")))
 
+    judge_errors = sum(v["judge_error"] for v in rates.values())
     agg = {"run": run, "dt": meta["dt"], "score": score,
            "rubric_version": RUBRIC_VERSION,
+           "judge_model": JUDGE_MODEL,
+           "judge_fingerprint": judge_fingerprint(),
+           "judge_errors": judge_errors,
            "judged": len(verdicts), "sampled": meta["sampled"],
            "population": meta.get("population"),
            "dimensions": rates, "fails": dict(fails),
@@ -289,6 +336,9 @@ def cmd_aggregate(args):
     row = {
         "run": run, "dt": meta["dt"], "score": score,
         "rubric_version": RUBRIC_VERSION,
+        "judge_model": JUDGE_MODEL,
+        "judge_fingerprint": judge_fingerprint(),
+        "judge_errors": judge_errors,
         "judged": len(verdicts), "sampled": meta["sampled"],
         "pass_rates": {k: v["pass_rate"] for k, v in rates.items()},
         "auto": auto["turn_fail_rates"],
@@ -310,6 +360,9 @@ def cmd_aggregate(args):
                 if v["severity"] == "blocker" and v["pass_rate"] is not None and v["pass_rate"] < 0.8]
     for k, v in sorted(blockers, key=lambda x: x[1]["pass_rate"]):
         print(f"  BLOCKER {k}: {v['pass_rate']*100:.0f}% pass ({v['fail']}/{v['applied']} failed)")
+    if judge_errors:
+        print(f"  {judge_errors} judge error(s) — verdicts that did not parse. "
+              f"Excluded from pass rates; investigate before trusting this run.")
     if novel:
         print(f"\n{len(novel)} novel failure(s) proposed:")
         for n in novel:
@@ -317,6 +370,46 @@ def cmd_aggregate(args):
 
 
 # ── stage 5: report ──────────────────────────────────────────────────
+
+def failure_diff(agg, hist):
+    """What changed in the failure set since the last comparable run.
+
+    commerce-agents `commerce-evals`: "Diff failure sets; a topline moving a
+    point between live runs is noise." So the report leads with this, not with
+    the score delta.
+
+    One honest limitation, stated in the output rather than hidden: each run
+    samples a DIFFERENT random 1% of a different day, so there is no per-session
+    diff to compute — a session that failed yesterday does not appear today.
+    What is comparable is the failure set at the DIMENSION level: which
+    dimensions crossed the 80% line in either direction, and which moved enough
+    that it is not sampling noise. Per-case diffing lives on the golden set in
+    eval_set/cases.yaml, which is fixed and replayable; that is the surface to
+    diff when a prompt or config changes.
+    """
+    prev = [h for h in hist if h["run"] != agg["run"]
+            and h.get("rubric_version") == agg.get("rubric_version")
+            and h.get("judge_fingerprint") == agg.get("judge_fingerprint")]
+    if not prev:
+        return None
+    before = prev[-1]
+    b = before.get("pass_rates") or {}
+    now = {k: v["pass_rate"] for k, v in agg["dimensions"].items()}
+
+    newly_failing, newly_passing, moved = [], [], []
+    for k, v in now.items():
+        old = b.get(k)
+        if v is None or old is None:
+            continue
+        if old >= 0.8 > v:
+            newly_failing.append((k, old, v))
+        elif v >= 0.8 > old:
+            newly_passing.append((k, old, v))
+        elif abs(v - old) >= 0.15:
+            moved.append((k, old, v))
+    return {"against": before["run"], "newly_failing": newly_failing,
+            "newly_passing": newly_passing, "moved": moved}
+
 
 def trend(dim, hist, n=7):
     vals = [h["pass_rates"].get(dim) for h in hist[-n:] if h["pass_rates"].get(dim) is not None]
@@ -354,6 +447,51 @@ def cmd_report(args):
              f"({a['turns']:,} turns) through the deterministic checks, "
              f"{agg['judged']} long conversations through the judge.")
     L.append("")
+    L.append(f"Rubric v{agg.get('rubric_version')} · judge "
+             f"`{agg.get('judge_model')}` · fingerprint "
+             f"`{agg.get('judge_fingerprint')}`"
+             + (f" · **{agg['judge_errors']} judge error(s)**" if agg.get("judge_errors") else ""))
+    L.append("")
+
+    diff = failure_diff(agg, hist)
+    if diff:
+        L.append(f"## What changed since {diff['against']}")
+        L.append("")
+        L.append("The failure set, not the topline — a score moving a point "
+                 "between runs is sampling noise. Each run is a different "
+                 "random 1% of a different day, so this compares dimensions, "
+                 "not sessions; per-case diffing belongs on the golden set.")
+        L.append("")
+        if diff["newly_failing"]:
+            L.append("**Newly failing** (crossed below 80%)")
+            L.append("")
+            for k, o, n_ in diff["newly_failing"]:
+                L.append(f"- `{k}` — {o*100:.0f}% → **{n_*100:.0f}%**")
+            L.append("")
+        if diff["newly_passing"]:
+            L.append("**Newly passing** (crossed above 80%)")
+            L.append("")
+            for k, o, n_ in diff["newly_passing"]:
+                L.append(f"- `{k}` — {o*100:.0f}% → **{n_*100:.0f}%**")
+            L.append("")
+        if diff["moved"]:
+            L.append("**Moved more than 15 points, still on the same side of the line**")
+            L.append("")
+            for k, o, n_ in sorted(diff["moved"], key=lambda x: x[2] - x[1]):
+                L.append(f"- `{k}` — {o*100:.0f}% → {n_*100:.0f}%")
+            L.append("")
+        if not any((diff["newly_failing"], diff["newly_passing"], diff["moved"])):
+            L.append("Nothing crossed the line and nothing moved more than 15 "
+                     "points. The failure set is unchanged.")
+            L.append("")
+    elif len([h for h in hist if h["run"] != agg["run"]]):
+        L.append("## What changed since the last run")
+        L.append("")
+        L.append("Not comparable: the rubric version or the judge fingerprint "
+                 "changed since the previous run, so the two failure sets were "
+                 "not produced by the same measurement. No diff is reported "
+                 "rather than a misleading one.")
+        L.append("")
 
     blockers = [(k, v) for k, v in agg["dimensions"].items()
                 if v["severity"] == "blocker" and v["pass_rate"] is not None and v["pass_rate"] < 0.8]
@@ -414,7 +552,7 @@ def cmd_report(args):
     # Slack payload — kept short on purpose; the artifact carries the detail.
     top = sorted([(k, v) for k, v in agg["dimensions"].items() if v["pass_rate"] is not None],
                  key=lambda x: x[1]["pass_rate"])[:4]
-    slack = [f"*Vaani daily eval — {agg['run']}*  (data: {agg['dt']})",
+    slack = [f"*Vaani daily eval — {agg['run']}*  (data: {agg['dt']}, rubric v{agg.get('rubric_version')})",
              f"*Score {agg['score']}/100*{delta}   ·   {agg['sampled']:,} conversations auto-checked, "
              f"{agg['judged']} judged", "", "*Weakest dimensions*"]
     for k, v in top:
@@ -423,6 +561,12 @@ def cmd_report(args):
               f"• {a['turn_fail_rates']['ACT_NOT_ASK']*100:.1f}% of turns ask a question back",
               f"• {a['sessions_zero_search_ge5_turns']}/{a['sessions_ge5_turns']} long sessions never searched",
               f"• {a['duplicate_consecutive_queries']} duplicate consecutive queries"]
+    if diff and (diff["newly_failing"] or diff["newly_passing"]):
+        slack += ["", f"*Failure set vs {diff['against']}*"]
+        for k, o, n_ in diff["newly_failing"]:
+            slack.append(f"• newly failing `{k}` — {o*100:.0f}% -> {n_*100:.0f}%")
+        for k, o, n_ in diff["newly_passing"]:
+            slack.append(f"• newly passing `{k}` — {o*100:.0f}% -> {n_*100:.0f}%")
     if agg["novel_failures"]:
         slack += ["", f"*{len(agg['novel_failures'])} new failure mode(s) proposed for the rubric*"]
         for n in agg["novel_failures"]:

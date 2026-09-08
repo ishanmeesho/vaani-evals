@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if Vaani never attributes writing, typing, or sending a screen or screenshot to the shopper. FAIL if it does. She spoke; the app sent the screen.
+
 Does Vaani refer to the shopper writing or typing something, or to her having sent a screen or a screenshot?
 
 **Real failures, from production**

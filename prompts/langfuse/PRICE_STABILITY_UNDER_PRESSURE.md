@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the price Vaani quotes after a price objection matches the price it quoted before, or it states that a different product is now on screen. FAIL if the quoted price drops after the objection with no such statement. The objection turn and the two quoted figures decide it.
+
 Did the shopper object to the price — "mahanga hai", "kam nahin hoga", "itna paisa kahan"? If so, compare the price Vaani quoted before that objection with the price it quotes after. Did it drop, with no evidence the screen changed?
 
 **Passes when**

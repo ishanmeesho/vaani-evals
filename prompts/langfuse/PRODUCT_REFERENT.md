@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the product Vaani describes is the one the shopper means - by deixis, by name, or by carry-over - or Vaani says it cannot tell which. FAIL if it answers about a different product than the referent.
+
 When the shopper refers to a product — deictically ('yeh wala', 'pehla wala'), by name, or by carry-over — is Vaani's answer about that product?
 
 **Passes when**

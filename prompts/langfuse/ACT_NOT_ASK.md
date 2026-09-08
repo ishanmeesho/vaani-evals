@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the turn contains no question, or contains exactly the permitted sort clarifier - set from a vague cheap or quality cue whose number is not already known, naming two or three concrete numbers. FAIL if it ends by asking the shopper for anything else, including an attribute before any search, or a question appended to a greeting or thank-you.
+
 Did Vaani do the thing and stop, or did it end the turn by asking the shopper for something? A question back costs her a turn and she may not come back for the second one. [CON] Asking for gender, age, size, colour or budget BEFORE searching is specifically forbidden. [SRCH]
 
 **Passes when**

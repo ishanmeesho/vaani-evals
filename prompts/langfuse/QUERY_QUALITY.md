@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the keyword is one lowercase English phrase of at most six tokens, comma-free, Devanagari-free, carries the product type, contains no attribute she did not state, and differs from the previous keyword. FAIL if any of those is untrue. The search_keywords list decides it.
+
 Judge the search keyword itself as a retrieval query against a Meesho-like catalogue.
 
 **Passes when**

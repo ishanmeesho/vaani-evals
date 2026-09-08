@@ -123,6 +123,12 @@ def render(dim):
     L.append(PREAMBLE)
     L.append("## The criterion")
     L.append("")
+    if dim.get("rubric"):
+        # The decision rule, stated as one PASS condition and one FAIL
+        # condition that no reply satisfies both of. This is the thing the
+        # judge is answering; everything below is elaboration on it.
+        L.append(f"> {dim['rubric'].strip()}")
+        L.append("")
     L.append(dim["asks"].strip())
     L.append("")
     if dim.get("pass_when"):
@@ -160,7 +166,9 @@ def render(dim):
 
 def main():
     rubric = yaml.safe_load(open(os.path.join(HERE, "rubric.yaml")))
-    dims = list(rubric.get("dimensions") or []) + list(rubric.get("dimensions_v2") or [])
+    dims = []
+    for key in sorted(k for k in rubric if k == "dimensions" or k.startswith("dimensions_v")):
+        dims += list(rubric.get(key) or [])
     os.makedirs(OUT, exist_ok=True)
 
     payloads = []

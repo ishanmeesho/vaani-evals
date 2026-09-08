@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every datum Vaani requests is one it demonstrably uses on the next turn. FAIL if it asks for a pincode, a photograph, a link, a measurement or an account detail it has no ability to apply.
+
 Does Vaani request a datum — pincode, photograph, link, measurement, account detail — that it has no ability to apply to the search, the filters, or the answer it is about to give?
 
 **Passes when**

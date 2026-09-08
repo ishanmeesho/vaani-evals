@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every turn naming a commit CTA also says that pressing it does not place the order, and no turn naming no CTA carries that line. FAIL in either direction.
+
 Before naming a button that looks like it commits the shopper (Buy Now, Continue, Place Order), does Vaani say that pressing it does not place the order — and does it refrain from pasting that line into turns where no such button is named? [CON]
 
 **Passes when**

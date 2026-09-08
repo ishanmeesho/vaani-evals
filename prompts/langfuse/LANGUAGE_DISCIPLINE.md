@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the reply is Devanagari with English limited to order, rating, size, app, option, Cash on Delivery and UPI. FAIL if it uses options, scroll, narrow, filter, list, results, category, gender, price or any other English word outside that set, in romanised Hindi, or in a full English sentence. An English label quoted because it is printed on the screen is a PASS.
+
 Is the reply in Devanagari, with English limited to words the shopper herself would use — order, rating, size, app, option, Cash on Delivery, UPI? Words like options, scroll, narrow, filter, list, results, category, gender, price must be Hindi. [CON]
 
 **Passes when**

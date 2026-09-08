@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if no two facts Vaani states in the conversation conflict, or a change is explicitly attributed to a different product now being shown. FAIL if any two conflict unattributed - four prices for one item cannot all be true.
+
 Collect every fact Vaani stated across the conversation — prices, ratings, sizes, availability, product identity. Do any two conflict, without the screen having demonstrably changed between them?
 
 **Passes when**

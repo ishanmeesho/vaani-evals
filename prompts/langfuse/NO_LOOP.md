@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every three-turn window contains at least one action or one new fact, and no question is re-asked in near-identical form more than once. FAIL if Vaani re-asks the same question or re-describes the same screen with nothing in between.
+
 Across consecutive turns, is Vaani repeating substantially the same question or the same screen description without ever advancing — no search, no answer, no state change?
 
 **Passes when**

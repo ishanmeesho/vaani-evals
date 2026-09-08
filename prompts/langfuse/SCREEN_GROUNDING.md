@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every element Vaani names is plausibly present on that screen type and correctly placed by colour and position. FAIL if it names an element that cannot be there, or treats a static label as a tappable control.
+
 Are the elements Vaani names — buttons, chips, colours, positions, product photos, interactive regions — plausibly present on the screen it was given, and correctly described by colour and position? [CON] Does it avoid inventing an interactive control?
 
 **Passes when**

@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if every returns, refund, exchange or delivery statement quotes policy or order data Vaani was given, and none is volunteered on a concern the shopper never raised. FAIL if it states one it was not given, or introduces returns or refunds unprompted.
+
 Does Vaani state a returns, refund, exchange or delivery policy that it was not given, or volunteer one when the shopper never raised the concern? Returns/refunds are for high fear, not a default. [CON]
 
 **Passes when**

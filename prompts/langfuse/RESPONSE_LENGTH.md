@@ -45,6 +45,8 @@ Two rules about the evidence you are given:
 
 ## The criterion
 
+> PASS if the reply is at most two sentences. FAIL if it is three or more. Sentence terminators decide it.
+
 Is the reply at most two sentences? [CON]
 
 

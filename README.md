@@ -28,6 +28,8 @@ does not yet cover — which is how the rubric grows.
 ## Run it
 
 ```bash
+# Unattended? Set MB_AUTH_MODE=api_key and MB_API_KEY instead — a Metabase
+# Personal API Key does not expire, and a session cookie does, daily.
 export MB_COOKIE='<fresh metabase.SESSION>'
 RUN=$(date +%F)
 python3 daily_pass.py sample --cookie "$MB_COOKIE" --run $RUN
