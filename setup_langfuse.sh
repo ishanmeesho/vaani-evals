@@ -52,16 +52,48 @@ for arg in "$@"; do
   esac
 done
 
-# .env is optional and gitignored; the environment wins over it.
+# .env is optional and gitignored, and it FILLS GAPS ONLY — a variable already
+# set in the environment is left alone.
+#
+# This has to be careful rather than a plain `. ./.env`. setup.sh copies
+# .env.example to .env, and that file ships the LANGFUSE_* keys empty so nobody
+# commits a real one. Sourcing it wholesale therefore overwrites the keys you
+# just exported with empty strings, and the script fails its own credential
+# check while your keys are sitting right there in the shell. That happened.
 if [ -f .env ]; then
-  set -a; . ./.env; set +a
+  while IFS= read -r line || [ -n "$line" ]; do
+    case "$line" in ''|\#*) continue ;; esac
+    case "$line" in *=*) ;; *) continue ;; esac
+    key="${line%%=*}"
+    key="${key# }"; key="${key%% }"; key="${key#export }"
+    case "$key" in *[!A-Za-z0-9_]*|'') continue ;; esac
+    # Only fill in what is unset or empty.
+    if [ -z "$(eval "printf '%s' \"\${$key:-}\"")" ]; then
+      val="${line#*=}"
+      val="${val#\"}"; val="${val%\"}"; val="${val#\'}"; val="${val%\'}"
+      export "$key=$val"
+    fi
+  done < .env
 fi
 
 PY="./venv/bin/python"
 [ -x "$PY" ] || PY="python3"
 
-: "${LANGFUSE_PUBLIC_KEY:?set LANGFUSE_PUBLIC_KEY (pk-lf-...)}"
-: "${LANGFUSE_SECRET_KEY:?set LANGFUSE_SECRET_KEY (sk-lf-...)}"
+if [ -z "${LANGFUSE_PUBLIC_KEY:-}" ] || [ -z "${LANGFUSE_SECRET_KEY:-}" ]; then
+  cat <<'EOF'
+Langfuse credentials are not set. Export all three in THIS shell:
+
+  export LANGFUSE_BASE_URL=http://amp-langfuse-web-admin.prd.meesho.int
+  export LANGFUSE_PUBLIC_KEY=pk-lf-<your full public key>
+  export LANGFUSE_SECRET_KEY=sk-lf-<your full secret key>
+
+Use the complete keys — a truncated value ending in "..." is not a key.
+
+Or put them in .env in this directory (gitignored). Values already in your
+environment take precedence over .env; empty entries in .env are ignored.
+EOF
+  exit 1
+fi
 HOST="${LANGFUSE_BASE_URL:-${LANGFUSE_HOST:-https://cloud.langfuse.com}}"
 
 echo "── 1. Regenerating prompts from rubric.yaml ─────────────────────"
